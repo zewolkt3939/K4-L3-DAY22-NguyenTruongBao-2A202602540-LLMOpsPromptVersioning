@@ -28,3 +28,10 @@ env/
 
 # Lab outputs (không commit, chỉ nộp evidence/)
 data/ragas_report.json
+
+# Local dependency installation log
+install.log
+data/rag_outputs.json
+plot_install.log
+data/ragas_*_checkpoint.json
+data/recovered_v1_trace.json

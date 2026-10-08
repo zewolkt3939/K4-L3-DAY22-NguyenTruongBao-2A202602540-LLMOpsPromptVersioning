@@ -1,0 +1,754 @@
+
+============================================================
+  Bước 1: LangSmith RAG Pipeline
+============================================================
+============================================================
+  Bước 1: LangSmith RAG Pipeline
+============================================================
+✅ Config OK  |  Provider: OPENAI  |  Project: day22-lab
+📚 Đã chia thành 107 chunks
+🔨 Đang tạo FAISS index từ 107 chunks ...
+✅ FAISS vectorstore đã sẵn sàng.
+[01/50] Q: What are the three main types of machine learning?
+       A: The three main types of machine learning are supervised learning, unsupervised learning, and reinfor
+
+[02/50] Q: What is overfitting in machine learning?
+       A: Overfitting occurs when a model learns the training data too well, including noise, leading to poor 
+
+[03/50] Q: Explain the bias-variance tradeoff.
+       A: The bias-variance tradeoff is a fundamental concept in machine learning that describes the balance b
+
+[04/50] Q: How does regularization prevent overfitting?
+       A: Regularization prevents overfitting by discouraging overly complex models through the addition of pe
+
+[05/50] Q: What is cross-validation?
+       A: Cross-validation is a model evaluation technique that provides a more reliable estimate of performan
+
+[06/50] Q: What is backpropagation?
+       A: Backpropagation is the core algorithm for training neural networks that computes gradients of the lo
+
+[07/50] Q: What are Convolutional Neural Networks primarily used for?
+       A: Convolutional Neural Networks are primarily used for processing grid-like data such as images, with 
+
+[08/50] Q: How do LSTM networks address the vanishing gradient problem?
+       A: LSTM networks address the vanishing gradient problem by using gating mechanisms that control informa
+
+[09/50] Q: What activation functions are commonly used in neural networ
+       A: Common activation functions used in neural networks include ReLU, sigmoid, and tanh. Newer variants 
+
+[10/50] Q: What is the role of pooling layers in CNNs?
+       A: Pooling layers in CNNs perform spatial downsampling, reducing spatial dimensions and computational c
+
+[11/50] Q: What is the transformer architecture?
+       A: The transformer architecture is a model used in natural language processing and deep learning that u
+
+[12/50] Q: What are word embeddings?
+       A: Word embeddings are dense vector representations of words that capture semantic meaning. They repres
+
+[13/50] Q: What is transfer learning in NLP?
+       A: Transfer learning in NLP means pre-training large models on massive corpora and then fine-tuning the
+
+[14/50] Q: How does BERT handle language understanding?
+       A: BERT handles language understanding through bidirectional transformer training, using masked languag
+
+[15/50] Q: What is self-attention in transformers?
+       A: Self-attention is a core mechanism in transformers that allows models to weigh the importance of dif
+
+[16/50] Q: What is GPT and how is it trained?
+       A: GPT (Generative Pre-trained Transformer) is a family of autoregressive language models developed by 
+
+[17/50] Q: What is instruction tuning?
+       A: Instruction tuning is a supervised fine-tuning technique used to make large language models (LLMs) m
+
+[18/50] Q: What is RLHF?
+       A: Reinforcement Learning from Human Feedback (RLHF) is a technique for aligning large language models 
+
+[19/50] Q: What is chain-of-thought prompting?
+       A: Chain-of-thought prompting is a technique that improves reasoning in language models by encouraging 
+
+[20/50] Q: What is the context length of GPT-4?
+       A: GPT-4 supports up to 128K tokens of context.
+
+[21/50] Q: What is Retrieval-Augmented Generation?
+       A: Retrieval-Augmented Generation (RAG) is an approach that combines generative language models with re
+
+[22/50] Q: What are the main components of a RAG pipeline?
+       A: The main components of a RAG pipeline are a retriever and a generator (LLM).
+
+[23/50] Q: What is dense retrieval?
+       A: Dense retrieval is a neural approach to document retrieval that outperforms traditional keyword matc
+
+[24/50] Q: Why is chunking strategy important in RAG?
+       A: Chunking strategy is important in RAG because it significantly impacts the quality of the retrieval-
+
+[25/50] Q: What advanced RAG techniques exist beyond basic retrieval?
+       A: Advanced RAG techniques include re-ranking, query expansion, HyDE (Hypothetical Document Embeddings)
+
+[26/50] Q: What are vector databases used for?
+       A: Vector databases are used for storing and querying high-dimensional vector embeddings for fast simil
+
+[27/50] Q: What is FAISS?
+       A: FAISS (Facebook AI Similarity Search) is a widely used library for efficient vector search, supporti
+
+[28/50] Q: How do text embeddings capture semantic meaning?
+       A: Text embeddings capture semantic meaning by converting text into numerical vectors, where semantical
+
+[29/50] Q: What is HNSW?
+       A: HNSW (Hierarchical Navigable Small World) is a graph-based algorithm for approximate nearest-neighbo
+
+[30/50] Q: What is hybrid search in vector databases?
+       A: Hybrid search in vector databases combines the strengths of both neural and keyword-based retrieval.
+
+[31/50] Q: What is LangChain?
+       A: LangChain is an open-source framework that simplifies building applications with large language mode
+
+[32/50] Q: What is LangChain Expression Language (LCEL)?
+       A: LangChain Expression Language (LCEL) is a declarative syntax for composing LangChain components. It 
+
+[33/50] Q: What is LangGraph?
+       A: LangGraph is an extension of LangChain for building stateful, multi-actor applications. It represent
+
+[34/50] Q: What memory types does LangChain support?
+       A: LangChain supports ConversationBufferMemory, ConversationSummaryMemory, ConversationWindowMemory, an
+
+[35/50] Q: What are LangChain retrievers?
+       A: LangChain retrievers are components that fetch relevant documents given a user query. They support v
+
+[36/50] Q: What is LangSmith?
+       A: LangSmith is a developer platform for building production-grade LLM applications. It provides tools 
+
+[37/50] Q: What information do LangSmith traces capture?
+       A: LangSmith traces capture inputs, outputs, latency, token usage, and errors for every component in a 
+
+[38/50] Q: What is the LangSmith Prompt Hub?
+       A: The LangSmith Prompt Hub is a centralized repository for managing prompt templates. It allows for st
+
+[39/50] Q: How does LangSmith help monitor production LLM applications?
+       A: LangSmith helps monitor production LLM applications by providing latency percentiles, error rates, t
+
+[40/50] Q: What are LangSmith datasets used for?
+       A: LangSmith datasets are used for systematic evaluation using example inputs and expected outputs to c
+
+[41/50] Q: What is RAGAS?
+       A: RAGAS (Retrieval Augmented Generation Assessment) is a framework specifically designed for evaluatin
+
+[42/50] Q: How does RAGAS compute faithfulness?
+       A: RAGAS computes faithfulness by extracting claims from the answer and checking whether each claim can
+
+[43/50] Q: What is answer relevancy in RAGAS?
+       A: Answer relevancy in RAGAS measures how well the generated answer addresses the question asked. It ev
+
+[44/50] Q: What is context recall in RAGAS?
+       A: Context recall in RAGAS measures how well the retrieved context covers the information needed to ans
+
+[45/50] Q: What inputs does RAGAS evaluation require?
+       A: RAGAS evaluation requires user queries, generated answers, retrieved contexts (a list of passages), 
+
+[46/50] Q: What is Guardrails AI?
+       A: Guardrails AI is an open-source framework for adding safety and validation layers to LLM application
+
+[47/50] Q: What is PII and why is it important to detect in LLM respons
+       A: PII (Personally Identifiable Information) is information that can identify an individual, such as na
+
+[48/50] Q: What does structured output validation ensure?
+       A: Structured output validation ensures that LLM responses conform to expected data formats and schemas
+
+[49/50] Q: What is Constitutional AI?
+       A: Constitutional AI is an approach to aligning language models with ethical principles. It involves tr
+
+[50/50] Q: What are common AI safety concerns with LLMs?
+       A: Common AI safety concerns with LLMs include hallucination, toxicity, bias, and PII leakage.
+
+
+✅ 50 traces đã gửi lên LangSmith project 'day22-lab'
+   Mở https://smith.langchain.com để xem traces.
+
+✅ Bước 1: LangSmith RAG Pipeline — HOÀN THÀNH
+
+============================================================
+  Bước 2: Prompt Hub & A/B Routing
+============================================================
+============================================================
+  Bước 2: Prompt Hub & A/B Routing
+============================================================
+✅ Config OK  |  Provider: OPENAI  |  Project: day22-lab
+⚠️  V1 lỗi: Conflict for /commits/-/nguyentruongbao-rag-v1. HTTPError('409 Client Error: Conflict for url: https://api.smith.langchain.com/commits/-/nguyentruongbao-rag-v1', '{"error":"Nothing to commit: prompt has not changed since latest commit"}\n')
+⚠️  V2 lỗi: Conflict for /commits/-/nguyentruongbao-rag-v2. HTTPError('409 Client Error: Conflict for url: https://api.smith.langchain.com/commits/-/nguyentruongbao-rag-v2', '{"error":"Nothing to commit: prompt has not changed since latest commit"}\n')
+↓ Đã pull 'nguyentruongbao-rag-v1' từ Hub
+↓ Đã pull 'nguyentruongbao-rag-v2' từ Hub
+🔨 Đang tạo FAISS index từ 107 chunks ...
+✅ FAISS vectorstore đã sẵn sàng.
+[01] [prompt-v2] What are the three main types of machine learning?...
+[02] [prompt-v2] What is overfitting in machine learning?...
+[03] [prompt-v1] Explain the bias-variance tradeoff....
+[04] [prompt-v1] How does regularization prevent overfitting?...
+[05] [prompt-v2] What is cross-validation?...
+[06] [prompt-v2] What is backpropagation?...
+[07] [prompt-v2] What are Convolutional Neural Networks primarily used f...
+[08] [prompt-v2] How do LSTM networks address the vanishing gradient pro...
+[09] [prompt-v1] What activation functions are commonly used in neural n...
+[10] [prompt-v2] What is the role of pooling layers in CNNs?...
+[11] [prompt-v1] What is the transformer architecture?...
+[12] [prompt-v1] What are word embeddings?...
+[13] [prompt-v2] What is transfer learning in NLP?...
+[14] [prompt-v1] How does BERT handle language understanding?...
+[15] [prompt-v2] What is self-attention in transformers?...
+[16] [prompt-v1] What is GPT and how is it trained?...
+[17] [prompt-v2] What is instruction tuning?...
+[18] [prompt-v2] What is RLHF?...
+[19] [prompt-v1] What is chain-of-thought prompting?...
+[20] [prompt-v2] What is the context length of GPT-4?...
+[21] [prompt-v1] What is Retrieval-Augmented Generation?...
+[22] [prompt-v1] What are the main components of a RAG pipeline?...
+[23] [prompt-v2] What is dense retrieval?...
+[24] [prompt-v1] Why is chunking strategy important in RAG?...
+[25] [prompt-v2] What advanced RAG techniques exist beyond basic retriev...
+[26] [prompt-v1] What are vector databases used for?...
+[27] [prompt-v2] What is FAISS?...
+[28] [prompt-v2] How do text embeddings capture semantic meaning?...
+[29] [prompt-v2] What is HNSW?...
+[30] [prompt-v2] What is hybrid search in vector databases?...
+[31] [prompt-v2] What is LangChain?...
+[32] [prompt-v2] What is LangChain Expression Language (LCEL)?...
+[33] [prompt-v1] What is LangGraph?...
+[34] [prompt-v2] What memory types does LangChain support?...
+[35] [prompt-v1] What are LangChain retrievers?...
+[36] [prompt-v2] What is LangSmith?...
+[37] [prompt-v2] What information do LangSmith traces capture?...
+[38] [prompt-v1] What is the LangSmith Prompt Hub?...
+[39] [prompt-v2] How does LangSmith help monitor production LLM applicat...
+[40] [prompt-v2] What are LangSmith datasets used for?...
+[41] [prompt-v2] What is RAGAS?...
+[42] [prompt-v1] How does RAGAS compute faithfulness?...
+[43] [prompt-v2] What is answer relevancy in RAGAS?...
+[44] [prompt-v2] What is context recall in RAGAS?...
+[45] [prompt-v1] What inputs does RAGAS evaluation require?...
+[46] [prompt-v2] What is Guardrails AI?...
+[47] [prompt-v1] What is PII and why is it important to detect in LLM re...
+[48] [prompt-v1] What does structured output validation ensure?...
+[49] [prompt-v2] What is Constitutional AI?...
+[50] [prompt-v2] What are common AI safety concerns with LLMs?...
+
+📊 Routing: V1=19 câu | V2=31 câu | Tổng=50
+✅ Bước 2 hoàn thành! Kiểm tra Prompt Hub và traces trên LangSmith.
+
+✅ Bước 2: Prompt Hub & A/B Routing — HOÀN THÀNH
+
+============================================================
+  Bước 3: RAGAS Evaluation
+============================================================
+============================================================
+  Bước 3: RAGAS Evaluation
+============================================================
+✅ Config OK  |  Provider: OPENAI  |  Project: day22-lab
+🔨 Đang tạo FAISS index từ 107 chunks ...
+✅ FAISS vectorstore đã sẵn sàng.
+
+🚀 Đang chạy 50 câu hỏi với prompt v1 ...
+  [01/50] What are the three main types of machine learning?
+  [02/50] What is overfitting in machine learning?
+  [03/50] Explain the bias-variance tradeoff.
+  [04/50] How does regularization prevent overfitting?
+  [05/50] What is cross-validation?
+  [06/50] What is backpropagation?
+  [07/50] What are Convolutional Neural Networks primarily used for?
+  [08/50] How do LSTM networks address the vanishing gradient problem?
+  [09/50] What activation functions are commonly used in neural networ
+  [10/50] What is the role of pooling layers in CNNs?
+  [11/50] What is the transformer architecture?
+  [12/50] What are word embeddings?
+  [13/50] What is transfer learning in NLP?
+  [14/50] How does BERT handle language understanding?
+  [15/50] What is self-attention in transformers?
+  [16/50] What is GPT and how is it trained?
+  [17/50] What is instruction tuning?
+  [18/50] What is RLHF?
+  [19/50] What is chain-of-thought prompting?
+  [20/50] What is the context length of GPT-4?
+  [21/50] What is Retrieval-Augmented Generation?
+  [22/50] What are the main components of a RAG pipeline?
+  [23/50] What is dense retrieval?
+  [24/50] Why is chunking strategy important in RAG?
+  [25/50] What advanced RAG techniques exist beyond basic retrieval?
+  [26/50] What are vector databases used for?
+  [27/50] What is FAISS?
+  [28/50] How do text embeddings capture semantic meaning?
+  [29/50] What is HNSW?
+  [30/50] What is hybrid search in vector databases?
+  [31/50] What is LangChain?
+  [32/50] What is LangChain Expression Language (LCEL)?
+  [33/50] What is LangGraph?
+  [34/50] What memory types does LangChain support?
+  [35/50] What are LangChain retrievers?
+  [36/50] What is LangSmith?
+  [37/50] What information do LangSmith traces capture?
+  [38/50] What is the LangSmith Prompt Hub?
+  [39/50] How does LangSmith help monitor production LLM applications?
+  [40/50] What are LangSmith datasets used for?
+  [41/50] What is RAGAS?
+  [42/50] How does RAGAS compute faithfulness?
+  [43/50] What is answer relevancy in RAGAS?
+  [44/50] What is context recall in RAGAS?
+  [45/50] What inputs does RAGAS evaluation require?
+  [46/50] What is Guardrails AI?
+  [47/50] What is PII and why is it important to detect in LLM respons
+  [48/50] What does structured output validation ensure?
+  [49/50] What is Constitutional AI?
+  [50/50] What are common AI safety concerns with LLMs?
+
+🚀 Đang chạy 50 câu hỏi với prompt v2 ...
+  [01/50] What are the three main types of machine learning?
+  [02/50] What is overfitting in machine learning?
+  [03/50] Explain the bias-variance tradeoff.
+  [04/50] How does regularization prevent overfitting?
+  [05/50] What is cross-validation?
+  [06/50] What is backpropagation?
+  [07/50] What are Convolutional Neural Networks primarily used for?
+  [08/50] How do LSTM networks address the vanishing gradient problem?
+  [09/50] What activation functions are commonly used in neural networ
+  [10/50] What is the role of pooling layers in CNNs?
+  [11/50] What is the transformer architecture?
+  [12/50] What are word embeddings?
+  [13/50] What is transfer learning in NLP?
+  [14/50] How does BERT handle language understanding?
+  [15/50] What is self-attention in transformers?
+  [16/50] What is GPT and how is it trained?
+  [17/50] What is instruction tuning?
+  [18/50] What is RLHF?
+  [19/50] What is chain-of-thought prompting?
+  [20/50] What is the context length of GPT-4?
+  [21/50] What is Retrieval-Augmented Generation?
+  [22/50] What are the main components of a RAG pipeline?
+  [23/50] What is dense retrieval?
+  [24/50] Why is chunking strategy important in RAG?
+  [25/50] What advanced RAG techniques exist beyond basic retrieval?
+  [26/50] What are vector databases used for?
+  [27/50] What is FAISS?
+  [28/50] How do text embeddings capture semantic meaning?
+  [29/50] What is HNSW?
+  [30/50] What is hybrid search in vector databases?
+  [31/50] What is LangChain?
+  [32/50] What is LangChain Expression Language (LCEL)?
+  [33/50] What is LangGraph?
+  [34/50] What memory types does LangChain support?
+  [35/50] What are LangChain retrievers?
+  [36/50] What is LangSmith?
+  [37/50] What information do LangSmith traces capture?
+  [38/50] What is the LangSmith Prompt Hub?
+  [39/50] How does LangSmith help monitor production LLM applications?
+  [40/50] What are LangSmith datasets used for?
+  [41/50] What is RAGAS?
+  [42/50] How does RAGAS compute faithfulness?
+  [43/50] What is answer relevancy in RAGAS?
+  [44/50] What is context recall in RAGAS?
+  [45/50] What inputs does RAGAS evaluation require?
+  [46/50] What is Guardrails AI?
+  [47/50] What is PII and why is it important to detect in LLM respons
+  [48/50] What does structured output validation ensure?
+  [49/50] What is Constitutional AI?
+  [50/50] What are common AI safety concerns with LLMs?
+
+📐 Đang đánh giá RAGAS cho prompt v1 ... (vui lòng chờ ~5-10 phút)
+
+Evaluating:   0%|          | 0/200 [00:00<?, ?it/s]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:   0%|          | 1/200 [00:05<17:34,  5.30s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:   1%|          | 2/200 [00:31<58:57, 17.86s/it]
+Evaluating:   4%|▎         | 7/200 [00:35<12:51,  4.00s/it]
+Evaluating:   4%|▍         | 9/200 [00:44<13:28,  4.23s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:   5%|▌         | 10/200 [00:57<18:18,  5.78s/it]
+Evaluating:   8%|▊         | 15/200 [01:06<10:44,  3.48s/it]
+Evaluating:   8%|▊         | 16/200 [01:13<12:06,  3.95s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  10%|█         | 20/200 [01:20<09:01,  3.01s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  10%|█         | 21/200 [01:32<12:38,  4.24s/it]
+Evaluating:  12%|█▏        | 23/200 [01:39<11:45,  3.99s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  13%|█▎        | 26/200 [01:52<12:14,  4.22s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  15%|█▌        | 30/200 [01:56<08:05,  2.85s/it]
+Evaluating:  16%|█▌        | 31/200 [02:01<08:49,  3.14s/it]
+Evaluating:  16%|█▌        | 32/200 [02:05<08:52,  3.17s/it]
+Evaluating:  16%|█▋        | 33/200 [02:08<08:58,  3.23s/it]
+Evaluating:  17%|█▋        | 34/200 [02:10<08:05,  2.93s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  18%|█▊        | 35/200 [02:17<10:50,  3.94s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  18%|█▊        | 37/200 [02:28<12:12,  4.49s/it]
+Evaluating:  20%|█▉        | 39/200 [02:31<09:22,  3.49s/it]
+Evaluating:  20%|██        | 41/200 [02:36<08:22,  3.16s/it]
+Evaluating:  22%|██▏       | 43/200 [02:40<07:03,  2.70s/it]
+Evaluating:  22%|██▏       | 44/200 [02:42<06:31,  2.51s/it]
+Evaluating:  22%|██▎       | 45/200 [02:50<09:40,  3.75s/it]
+Evaluating:  24%|██▍       | 48/200 [02:53<06:22,  2.52s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  24%|██▍       | 49/200 [03:18<16:46,  6.67s/it]
+Evaluating:  28%|██▊       | 56/200 [03:24<06:58,  2.91s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  29%|██▉       | 58/200 [03:37<08:29,  3.59s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  30%|███       | 60/200 [03:47<09:05,  3.89s/it]
+Evaluating:  32%|███▏      | 63/200 [03:57<08:39,  3.79s/it]
+Evaluating:  33%|███▎      | 66/200 [03:59<06:06,  2.74s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  34%|███▎      | 67/200 [04:05<07:06,  3.21s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  34%|███▍      | 68/200 [04:16<09:50,  4.48s/it]
+Evaluating:  36%|███▌      | 71/200 [04:28<09:01,  4.20s/it]
+Evaluating:  38%|███▊      | 75/200 [04:32<05:57,  2.86s/it]
+Evaluating:  39%|███▉      | 78/200 [04:34<04:17,  2.11s/it]
+Evaluating:  40%|███▉      | 79/200 [04:37<04:31,  2.24s/it]
+Evaluating:  40%|████      | 81/200 [04:41<04:28,  2.25s/it]
+Evaluating:  41%|████      | 82/200 [04:43<04:11,  2.13s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  42%|████▏     | 83/200 [04:46<04:40,  2.39s/it]
+Evaluating:  42%|████▏     | 84/200 [04:49<04:53,  2.53s/it]
+Evaluating:  42%|████▎     | 85/200 [05:00<08:18,  4.33s/it]
+Evaluating:  44%|████▎     | 87/200 [05:01<05:27,  2.90s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  44%|████▍     | 88/200 [05:15<09:51,  5.28s/it]
+Evaluating:  44%|████▍     | 89/200 [05:18<08:51,  4.79s/it]
+Evaluating:  45%|████▌     | 90/200 [05:21<08:04,  4.41s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  46%|████▌     | 91/200 [05:35<12:31,  6.89s/it]
+Evaluating:  48%|████▊     | 95/200 [05:37<05:10,  2.96s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  48%|████▊     | 96/200 [05:49<08:06,  4.68s/it]
+Evaluating:  50%|█████     | 101/200 [05:51<03:42,  2.25s/it]
+Evaluating:  51%|█████     | 102/200 [05:54<03:54,  2.39s/it]
+Evaluating:  52%|█████▏    | 103/200 [05:57<04:03,  2.51s/it]
+Evaluating:  52%|█████▏    | 104/200 [06:04<05:08,  3.21s/it]
+Evaluating:  53%|█████▎    | 106/200 [06:07<04:18,  2.75s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  54%|█████▎    | 107/200 [06:25<08:59,  5.81s/it]
+Evaluating:  56%|█████▌    | 112/200 [06:28<04:01,  2.74s/it]
+Evaluating:  56%|█████▋    | 113/200 [06:31<04:03,  2.80s/it]
+Evaluating:  57%|█████▋    | 114/200 [06:35<04:12,  2.94s/it]
+Evaluating:  57%|█████▊    | 115/200 [06:40<04:46,  3.37s/it]
+Evaluating:  58%|█████▊    | 117/200 [06:47<04:43,  3.41s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  59%|█████▉    | 118/200 [06:59<06:53,  5.04s/it]
+Evaluating:  61%|██████    | 122/200 [07:02<03:33,  2.74s/it]
+Evaluating:  62%|██████▏   | 123/200 [07:11<04:52,  3.81s/it]
+Evaluating:  63%|██████▎   | 126/200 [07:13<03:02,  2.47s/it]
+Evaluating:  64%|██████▎   | 127/200 [07:21<04:10,  3.43s/it]
+Evaluating:  64%|██████▍   | 128/200 [07:26<04:23,  3.66s/it]
+Evaluating:  65%|██████▌   | 130/200 [07:27<03:06,  2.67s/it]
+Evaluating:  66%|██████▌   | 131/200 [07:30<03:11,  2.77s/it]
+Evaluating:  66%|██████▌   | 132/200 [07:39<04:32,  4.00s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  68%|██████▊   | 135/200 [07:56<05:17,  4.89s/it]
+Evaluating:  70%|███████   | 141/200 [08:02<02:36,  2.65s/it]
+Evaluating:  71%|███████   | 142/200 [08:04<02:26,  2.52s/it]
+Evaluating:  72%|███████▏  | 143/200 [08:09<02:42,  2.85s/it]
+Evaluating:  72%|███████▏  | 144/200 [08:19<03:56,  4.21s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  73%|███████▎  | 146/200 [08:27<03:35,  4.00s/it]
+Evaluating:  74%|███████▍  | 148/200 [08:39<04:05,  4.72s/it]
+Evaluating:  76%|███████▋  | 153/200 [08:41<01:51,  2.37s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  77%|███████▋  | 154/200 [08:48<02:21,  3.08s/it]
+Evaluating:  78%|███████▊  | 155/200 [08:52<02:18,  3.08s/it]
+Evaluating:  78%|███████▊  | 156/200 [08:56<02:28,  3.38s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  78%|███████▊  | 157/200 [09:03<02:55,  4.08s/it]
+Evaluating:  80%|███████▉  | 159/200 [09:08<02:21,  3.44s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  80%|████████  | 161/200 [09:19<02:43,  4.20s/it]
+Evaluating:  81%|████████  | 162/200 [09:22<02:31,  3.98s/it]
+Evaluating:  83%|████████▎ | 166/200 [09:27<01:26,  2.53s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  84%|████████▎ | 167/200 [09:35<01:53,  3.43s/it]
+Evaluating:  84%|████████▍ | 168/200 [09:37<01:40,  3.14s/it]
+Evaluating:  85%|████████▌ | 170/200 [09:39<01:09,  2.33s/it]
+Evaluating:  86%|████████▌ | 171/200 [09:47<01:44,  3.61s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  86%|████████▋ | 173/200 [09:57<01:50,  4.09s/it]
+Evaluating:  88%|████████▊ | 176/200 [09:59<01:00,  2.53s/it]
+Evaluating:  88%|████████▊ | 177/200 [10:03<01:05,  2.87s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  89%|████████▉ | 178/200 [10:15<01:41,  4.62s/it]
+Evaluating:  90%|█████████ | 180/200 [10:18<01:10,  3.50s/it]
+Evaluating:  90%|█████████ | 181/200 [10:20<00:58,  3.10s/it]
+Evaluating:  92%|█████████▏| 183/200 [10:31<01:07,  3.96s/it]
+Evaluating:  93%|█████████▎| 186/200 [10:35<00:40,  2.88s/it]
+Evaluating:  94%|█████████▎| 187/200 [10:38<00:37,  2.91s/it]
+Evaluating:  94%|█████████▍| 188/200 [10:49<00:53,  4.45s/it]
+Evaluating:  96%|█████████▌| 191/200 [11:04<00:42,  4.77s/it]
+Evaluating: 100%|█████████▉| 199/200 [11:10<00:02,  2.21s/it]
+Evaluating: 100%|██████████| 200/200 [11:14<00:00,  2.36s/it]
+Evaluating: 100%|██████████| 200/200 [11:14<00:00,  3.37s/it]
+
+📊 Kết quả RAGAS — Prompt V1:
+  faithfulness                  : 0.9509 ⭐
+  answer_relevancy              : 0.9100
+  context_recall                : 1.0000
+  context_precision             : 0.9450
+
+📐 Đang đánh giá RAGAS cho prompt v2 ... (vui lòng chờ ~5-10 phút)
+
+Evaluating:   0%|          | 0/200 [00:00<?, ?it/s]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:   0%|          | 1/200 [00:04<16:01,  4.83s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:   1%|          | 2/200 [00:11<19:45,  5.99s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:   2%|▏         | 3/200 [00:16<18:00,  5.48s/it]
+Evaluating:   2%|▎         | 5/200 [00:33<23:13,  7.14s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:   4%|▍         | 9/200 [00:38<11:18,  3.55s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:   5%|▌         | 10/200 [00:43<11:56,  3.77s/it]
+Evaluating:   6%|▌         | 11/200 [00:48<12:33,  3.99s/it]
+Evaluating:   6%|▌         | 12/200 [00:59<17:26,  5.56s/it]
+Evaluating:   6%|▋         | 13/200 [01:03<16:41,  5.36s/it]
+Evaluating:   8%|▊         | 16/200 [01:06<09:35,  3.13s/it]
+Evaluating:   9%|▉         | 18/200 [01:12<09:04,  2.99s/it]
+Evaluating:  10%|▉         | 19/200 [01:13<08:11,  2.71s/it]
+Evaluating:  10%|█         | 20/200 [01:15<07:26,  2.48s/it]
+Evaluating:  10%|█         | 21/200 [01:18<07:58,  2.67s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  11%|█         | 22/200 [01:27<12:39,  4.27s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  12%|█▎        | 25/200 [01:38<11:13,  3.85s/it]
+Evaluating:  15%|█▌        | 30/200 [01:48<07:57,  2.81s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  16%|█▌        | 31/200 [01:53<08:53,  3.16s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  16%|█▌        | 32/200 [02:00<10:36,  3.79s/it]
+Evaluating:  17%|█▋        | 34/200 [02:05<09:19,  3.37s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  18%|█▊        | 35/200 [02:10<10:22,  3.77s/it]
+Evaluating:  18%|█▊        | 37/200 [02:14<08:14,  3.03s/it]
+Evaluating:  19%|█▉        | 38/200 [02:25<12:45,  4.72s/it]
+Evaluating:  20%|██        | 40/200 [02:27<08:49,  3.31s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  20%|██        | 41/200 [02:41<14:33,  5.49s/it]
+Evaluating:  22%|██▎       | 45/200 [02:43<07:06,  2.75s/it]
+Evaluating:  23%|██▎       | 46/200 [02:46<07:20,  2.86s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  24%|██▍       | 48/200 [02:50<06:29,  2.56s/it]
+Evaluating:  24%|██▍       | 49/200 [02:55<07:36,  3.02s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  25%|██▌       | 50/200 [03:02<09:42,  3.89s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  26%|██▋       | 53/200 [03:09<07:40,  3.13s/it]
+Evaluating:  28%|██▊       | 55/200 [03:15<07:40,  3.18s/it]
+Evaluating:  28%|██▊       | 57/200 [03:17<05:50,  2.45s/it]
+Evaluating:  29%|██▉       | 58/200 [03:24<07:32,  3.19s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  30%|██▉       | 59/200 [03:27<07:46,  3.31s/it]
+Evaluating:  30%|███       | 60/200 [03:29<07:00,  3.00s/it]
+Evaluating:  30%|███       | 61/200 [03:36<08:59,  3.88s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  32%|███▏      | 63/200 [03:46<10:04,  4.42s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  33%|███▎      | 66/200 [04:00<09:58,  4.47s/it]
+Evaluating:  34%|███▍      | 69/200 [04:02<06:19,  2.90s/it]
+Evaluating:  35%|███▌      | 70/200 [04:03<05:51,  2.70s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  36%|███▌      | 71/200 [04:09<06:56,  3.23s/it]
+Evaluating:  36%|███▌      | 72/200 [04:15<08:26,  3.95s/it]
+Evaluating:  36%|███▋      | 73/200 [04:23<10:03,  4.75s/it]
+Evaluating:  38%|███▊      | 75/200 [04:26<07:20,  3.52s/it]
+Evaluating:  38%|███▊      | 77/200 [04:31<06:30,  3.18s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  40%|███▉      | 79/200 [04:41<07:43,  3.83s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  41%|████      | 82/200 [04:52<07:11,  3.65s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  42%|████▎     | 85/200 [04:59<06:04,  3.17s/it]
+Evaluating:  43%|████▎     | 86/200 [05:00<05:34,  2.94s/it]
+Evaluating:  44%|████▎     | 87/200 [05:02<05:06,  2.72s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  44%|████▍     | 88/200 [05:16<09:21,  5.01s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  46%|████▌     | 91/200 [05:25<07:18,  4.02s/it]
+Evaluating:  46%|████▌     | 92/200 [05:33<08:36,  4.78s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  48%|████▊     | 96/200 [05:38<05:09,  2.97s/it]
+Evaluating:  48%|████▊     | 97/200 [05:43<05:33,  3.24s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  50%|████▉     | 99/200 [05:59<07:52,  4.68s/it]
+Evaluating:  52%|█████▏    | 103/200 [06:03<04:55,  3.05s/it]
+Evaluating:  52%|█████▎    | 105/200 [06:05<03:56,  2.49s/it]
+Evaluating:  53%|█████▎    | 106/200 [06:11<04:45,  3.04s/it]
+Evaluating:  54%|█████▎    | 107/200 [06:14<04:43,  3.05s/it]
+Evaluating:  54%|█████▍    | 108/200 [06:27<07:43,  5.03s/it]
+Evaluating:  56%|█████▌    | 111/200 [06:45<08:02,  5.43s/it]
+Evaluating:  60%|█████▉    | 119/200 [06:46<02:48,  2.08s/it]
+Evaluating:  60%|██████    | 120/200 [06:49<02:54,  2.19s/it]
+Evaluating:  60%|██████    | 121/200 [06:53<03:07,  2.38s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  61%|██████    | 122/200 [06:56<03:19,  2.56s/it]
+Evaluating:  62%|██████▏   | 123/200 [06:58<03:02,  2.38s/it]
+Evaluating:  62%|██████▏   | 124/200 [07:04<03:58,  3.14s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  63%|██████▎   | 126/200 [07:19<05:45,  4.66s/it]
+Evaluating:  65%|██████▌   | 130/200 [07:30<04:19,  3.71s/it]
+Evaluating:  66%|██████▌   | 131/200 [07:33<04:08,  3.61s/it]
+Evaluating:  66%|██████▌   | 132/200 [07:39<04:37,  4.08s/it]
+Evaluating:  68%|██████▊   | 135/200 [07:46<03:32,  3.27s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  68%|██████▊   | 137/200 [07:57<04:05,  3.90s/it]
+Evaluating:  69%|██████▉   | 138/200 [08:00<03:54,  3.78s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  70%|██████▉   | 139/200 [08:09<04:51,  4.79s/it]
+Evaluating:  72%|███████▏  | 144/200 [08:12<02:12,  2.36s/it]
+Evaluating:  73%|███████▎  | 146/200 [08:17<02:08,  2.38s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  74%|███████▎  | 147/200 [08:22<02:31,  2.85s/it]
+Evaluating:  74%|███████▍  | 148/200 [08:26<02:32,  2.94s/it]
+Evaluating:  74%|███████▍  | 149/200 [08:27<02:17,  2.69s/it]
+Evaluating:  75%|███████▌  | 150/200 [08:33<02:47,  3.34s/it]
+Evaluating:  76%|███████▌  | 151/200 [08:41<03:41,  4.51s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  76%|███████▌  | 152/200 [08:57<05:54,  7.40s/it]
+Evaluating:  78%|███████▊  | 156/200 [09:02<02:42,  3.70s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  78%|███████▊  | 157/200 [09:05<02:38,  3.69s/it]
+Evaluating:  79%|███████▉  | 158/200 [09:07<02:18,  3.30s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  80%|███████▉  | 159/200 [09:17<03:16,  4.79s/it]
+Evaluating:  81%|████████  | 162/200 [09:20<01:52,  2.96s/it]
+Evaluating:  82%|████████▏ | 164/200 [09:22<01:22,  2.28s/it]
+Evaluating:  82%|████████▎ | 165/200 [09:31<02:04,  3.55s/it]
+Evaluating:  84%|████████▍ | 169/200 [09:32<01:00,  1.94s/it]
+Evaluating:  85%|████████▌ | 170/200 [09:41<01:27,  2.90s/it]
+Evaluating:  86%|████████▌ | 171/200 [09:42<01:17,  2.67s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  86%|████████▌ | 172/200 [09:47<01:29,  3.19s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  86%|████████▋ | 173/200 [09:59<02:17,  5.09s/it]
+Evaluating:  87%|████████▋ | 174/200 [10:01<01:49,  4.23s/it]
+Evaluating:  88%|████████▊ | 177/200 [10:04<01:00,  2.62s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  90%|████████▉ | 179/200 [10:17<01:23,  3.98s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  90%|█████████ | 180/200 [10:28<01:43,  5.17s/it]
+Evaluating:  90%|█████████ | 181/200 [10:29<01:24,  4.42s/it]
+Evaluating:  92%|█████████▏| 184/200 [10:38<00:58,  3.64s/it]
+Evaluating:  94%|█████████▎| 187/200 [10:43<00:36,  2.82s/it]
+Evaluating:  94%|█████████▍| 188/200 [10:46<00:34,  2.88s/it]
+Evaluating:  95%|█████████▌| 190/200 [10:49<00:24,  2.49s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  96%|█████████▌| 191/200 [10:59<00:35,  3.95s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+
+Evaluating:  96%|█████████▌| 192/200 [11:05<00:33,  4.21s/it]
+Evaluating:  96%|█████████▋| 193/200 [11:06<00:25,  3.61s/it]
+Evaluating:  98%|█████████▊| 196/200 [11:11<00:10,  2.62s/it]
+Evaluating:  99%|█████████▉| 198/200 [11:13<00:04,  2.04s/it]
+Evaluating: 100%|█████████▉| 199/200 [11:16<00:02,  2.22s/it]
+Evaluating: 100%|██████████| 200/200 [11:17<00:00,  2.10s/it]
+Evaluating: 100%|██████████| 200/200 [11:17<00:00,  3.39s/it]
+
+📊 Kết quả RAGAS — Prompt V2:
+  faithfulness                  : 0.8708 ⭐
+  answer_relevancy              : 0.8913
+  context_recall                : 1.0000
+  context_precision             : 0.9450
+
+=================================================================
+  Metric                                V1        V2  Winner
+=================================================================
+  faithfulness                      0.9509    0.8708  ← V1
+  answer_relevancy                  0.9100    0.8913  ← V1
+  context_recall                    1.0000    1.0000  Tie
+  context_precision                 0.9450    0.9450  ← V1
+
+✅ Đạt mục tiêu: faithfulness = 0.9509 ≥ 0.8
+💾 Đã lưu báo cáo vào D:\Ai Thuc chien\All Lab\Track 2\K4-L3-Track2-Day22-LLMOps-Prompt-Versioning\data\ragas_report.json
+
+✅ Bước 3: RAGAS Evaluation — HOÀN THÀNH
+
+============================================================
+  Bước 4: Guardrails AI Validators
+============================================================
+=======================================================
+  Bước 4: Guardrails AI Validators
+=======================================================
+
+=======================================================
+  Demo: PII Detection & Redaction
+=======================================================
+
+[Email]
+  Input:  Contact John at john.doe@example.com for details.
+  Output: Contact John at [EMAIL_REDACTED] for details.
+
+[Phone]
+  Input:  Call our support line at (555) 867-5309.
+  Output: Call our support line at [PHONE_REDACTED].
+
+[SSN]
+  Input:  Patient SSN is 123-45-6789 on file.
+  Output: Patient SSN is [SSN_REDACTED] on file.
+
+[Credit Card]
+  Input:  Payment made with card 4532 1234 5678 9010.
+  Output: Payment made with card [CREDIT_CARD_REDACTED].
+
+[Multi-PII]
+  Input:  Email: alice@example.com, Phone: 555-123-4567
+  Output: Email: [EMAIL_REDACTED], Phone: [PHONE_REDACTED]
+
+[Clean]
+  Input:  No sensitive information in this text.
+  Output: No sensitive information in this text.
+
+
+=======================================================
+  Demo: JSON Formatting & Repair
+=======================================================
+
+[Valid JSON] ✅ Pass
+  Input:  {"name": "Alice", "age": 30}
+  Output: {"name": "Alice", "age": 30}
+
+[Markdown fences] ✅ Pass
+  Input:  ```json
+{"name": "Bob"}
+```
+  Output: {
+  "name": "Bob"
+}
+
+[Single quotes] ✅ Pass
+  Input:  {'name': 'Charlie', 'score': 95}
+  Output: {
+  "name": "Charlie",
+  "score": 95
+}
+
+[Trailing comma] ✅ Pass
+  Input:  {"key": "value",}
+  Output: {
+  "key": "value"
+}
+
+[Truly invalid] ✅ Pass
+  Input:  This is not JSON at all: ??? {]
+  Output: {"error": "invalid_json"}
+
+
+✅ Bước 4 hoàn thành!
+
+✅ Bước 4: Guardrails AI Validators — HOÀN THÀNH
+
+============================================================
+  Tổng kết
+============================================================
+  ✅ PASS  Bước 1: LangSmith RAG Pipeline
+  ✅ PASS  Bước 2: Prompt Hub & A/B Routing
+  ✅ PASS  Bước 3: RAGAS Evaluation
+  ✅ PASS  Bước 4: Guardrails AI Validators

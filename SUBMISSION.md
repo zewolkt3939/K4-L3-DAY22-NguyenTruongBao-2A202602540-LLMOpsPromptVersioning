@@ -1,5 +1,18 @@
 # Hướng dẫn nộp bài — Day 22: LangSmith + Prompt Versioning
 
+**Nguyễn Trường Bảo — MSSV 2A202602540**
+
+Repo của bài: `K4-L3-DAY22-NguyenTruongBao-2A202602540-LLMOpsPromptVersioning`
+
+Hai đường dẫn để nộp trên VLearn:
+
+1. GitHub: https://github.com/zewolkt3939/K4-L3-DAY22-NguyenTruongBao-2A202602540-LLMOpsPromptVersioning
+2. LangSmith project: https://smith.langchain.com/o/ec85d835-3c23-4c99-9174-e24b327941b4/projects/p/d7ff300a-0b90-4693-b463-98127bb8b2ff
+
+Project cần tài khoản có quyền. Minh chứng xem không cần đăng nhập:
+[100 trace LangSmith công khai](evidence/public_traces.md).
+Học viên tự thực hiện thao tác nộp trên VLearn.
+
 > **Hình thức: Bài CÁ NHÂN.** Mỗi học viên tự nộp 1 repo của riêng mình.
 
 ---

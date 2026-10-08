@@ -1,0 +1,51 @@
+{
+  "project": "day22-lab",
+  "project_id": "d7ff300a-0b90-4693-b463-98127bb8b2ff",
+  "by_name": {
+    "rag-query": 100,
+    "ab-rag-query": 100
+  },
+  "prompts": [
+    {
+      "name": "nguyentruongbao-rag-v1",
+      "url": "https://smith.langchain.com/prompts/nguyentruongbao-rag-v1/c52cd92e?organizationId=ec85d835-3c23-4c99-9174-e24b327941b4",
+      "variables": [
+        "context",
+        "question"
+      ],
+      "metadata": {
+        "lc_hub_owner": "-",
+        "lc_hub_repo": "nguyentruongbao-rag-v1",
+        "lc_hub_commit_hash": "c52cd92ed32e5d575b35bbbb7f44daf3efdd11123550d1714cf3c1a5b0d3b72b"
+      }
+    },
+    {
+      "name": "nguyentruongbao-rag-v2",
+      "url": "https://smith.langchain.com/prompts/nguyentruongbao-rag-v2/077b516c?organizationId=ec85d835-3c23-4c99-9174-e24b327941b4",
+      "variables": [
+        "context",
+        "question"
+      ],
+      "metadata": {
+        "lc_hub_owner": "-",
+        "lc_hub_repo": "nguyentruongbao-rag-v2",
+        "lc_hub_commit_hash": "077b516c2dc6a3c5710cd76dabedaa3d72da8ed2b228b8ea6532ae0808e48263"
+      }
+    }
+  ],
+  "student": {
+    "name": "Nguyễn Trường Bảo",
+    "student_id": "2A202602540"
+  },
+  "repository": "https://github.com/zewolkt3939/K4-L3-DAY22-NguyenTruongBao-2A202602540-LLMOpsPromptVersioning",
+  "verified_completed_root_trace_count_lower_bound": 200,
+  "verified_at": "2026-10-08T08:40:19.122886+00:00",
+  "public_trace_count": 100,
+  "run_all_exit_code": 0,
+  "run_all_steps_passed": [
+    1,
+    2,
+    3,
+    4
+  ]
+}

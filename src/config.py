@@ -59,16 +59,25 @@ def validate() -> bool:
     """
     missing = []
 
-    if not LANGSMITH_API_KEY:
+    def configured(value):
+        return bool(value and not value.startswith(("your_", "sk-your")))
+
+
+    if PROVIDER not in {"openai", "gemini", "anthropic", "ollama", "openrouter"}:
+        missing.append("PROVIDER không hợp lệ")
+    if PROVIDER in {"anthropic", "openrouter"} and not configured(OPENAI_API_KEY):
+        missing.append("OPENAI_API_KEY (embeddings)")
+
+    if not configured(LANGSMITH_API_KEY):
         missing.append("LANGCHAIN_API_KEY (LangSmith)")
 
-    if PROVIDER == "openai" and not OPENAI_API_KEY:
+    if PROVIDER == "openai" and not configured(OPENAI_API_KEY):
         missing.append("OPENAI_API_KEY")
-    elif PROVIDER == "gemini" and not GOOGLE_API_KEY:
+    elif PROVIDER == "gemini" and not configured(GOOGLE_API_KEY):
         missing.append("GOOGLE_API_KEY")
-    elif PROVIDER == "anthropic" and not ANTHROPIC_API_KEY:
+    elif PROVIDER == "anthropic" and not configured(ANTHROPIC_API_KEY):
         missing.append("ANTHROPIC_API_KEY")
-    elif PROVIDER == "openrouter" and not OPENROUTER_API_KEY:
+    elif PROVIDER == "openrouter" and not configured(OPENROUTER_API_KEY):
         missing.append("OPENROUTER_API_KEY")
     # Ollama: không cần API key
 
@@ -84,4 +93,4 @@ def validate() -> bool:
 
 
 if __name__ == "__main__":
-    validate()
+    raise SystemExit(0 if validate() else 1)

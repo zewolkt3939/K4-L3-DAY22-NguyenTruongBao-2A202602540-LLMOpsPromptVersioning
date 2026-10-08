@@ -70,6 +70,7 @@ def main():
         status = "✅ PASS" if success else "❌ FAIL"
         print(f"  {status}  {title}")
 
+    return 0 if all(results.values()) else 1
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

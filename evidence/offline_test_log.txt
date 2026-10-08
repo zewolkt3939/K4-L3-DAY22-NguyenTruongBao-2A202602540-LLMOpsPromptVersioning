@@ -1,0 +1,41 @@
+test_evaluation_retries_only_missing_score_and_resumes (test_lab.LabChecks.test_evaluation_retries_only_missing_score_and_resumes) ... ok
+test_json_guard (test_lab.LabChecks.test_json_guard) ... D:\Ai Thuc chien\All Lab\Track 2\K4-L3-Track2-Day22-LLMOps-Prompt-Versioning\.venv\Lib\site-packages\guardrails\telemetry\common.py:40: DeprecationWarning: Use LLMResponse.model_dump() instead.
+  return json.dumps(val.to_dict())
+D:\Ai Thuc chien\All Lab\Track 2\K4-L3-Track2-Day22-LLMOps-Prompt-Versioning\.venv\Lib\site-packages\guardrails\validator_service\__init__.py:51: DeprecationWarning: There is no current event loop
+  return asyncio.get_event_loop()
+D:\Ai Thuc chien\All Lab\Track 2\K4-L3-Track2-Day22-LLMOps-Prompt-Versioning\.venv\Lib\site-packages\guardrails\telemetry\common.py:40: DeprecationWarning: Use Call.model_dump() instead.
+  return json.dumps(val.to_dict())
+D:\Ai Thuc chien\All Lab\Track 2\K4-L3-Track2-Day22-LLMOps-Prompt-Versioning\.venv\Lib\site-packages\guardrails\telemetry\common.py:40: DeprecationWarning: Use Iteration.model_dump() instead.
+  return json.dumps(val.to_dict())
+ok
+test_pii_guard (test_lab.LabChecks.test_pii_guard) ... ok
+test_rag_and_dataset (test_lab.LabChecks.test_rag_and_dataset) ... ok
+test_router_and_hub_fallback (test_lab.LabChecks.test_router_and_hub_fallback) ... ok
+test_step1_main_runs_all_questions (test_lab.LabChecks.test_step1_main_runs_all_questions) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.845s
+
+OK
+
+📐 Đang đánh giá RAGAS cho prompt test ... (vui lòng chờ ~5-10 phút)
+Retry test sample 1, metric context_recall, attempt 1
+
+📊 Kết quả RAGAS — Prompt TEST:
+  faithfulness                  : 0.0000
+  answer_relevancy              : 0.8000
+  context_recall                : 0.7500
+  context_precision             : 1.0000
+
+📐 Đang đánh giá RAGAS cho prompt test ... (vui lòng chờ ~5-10 phút)
+Resuming saved evaluation for test
+
+📊 Kết quả RAGAS — Prompt TEST:
+  faithfulness                  : 0.0000
+  answer_relevancy              : 0.8000
+  context_recall                : 0.7500
+  context_precision             : 1.0000
+🔨 Đang tạo FAISS index từ 3 chunks ...
+✅ FAISS vectorstore đã sẵn sàng.
+ℹ️  Dùng local fallback cho 'nguyentruongbao-rag-v1'
+ℹ️  Dùng local fallback cho 'nguyentruongbao-rag-v2'

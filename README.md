@@ -1,3 +1,12 @@
+# Day 22 — Nguyễn Trường Bảo
+
+- **Họ tên:** Nguyễn Trường Bảo
+- **MSSV:** 2A202602540
+- **Repository:** [K4-L3-DAY22-NguyenTruongBao-2A202602540-LLMOpsPromptVersioning](https://github.com/zewolkt3939/K4-L3-DAY22-NguyenTruongBao-2A202602540-LLMOpsPromptVersioning)
+- **LangSmith:** [day22-lab](https://smith.langchain.com/o/ec85d835-3c23-4c99-9174-e24b327941b4/projects/p/d7ff300a-0b90-4693-b463-98127bb8b2ff)
+- **Kết quả và evidence:** [evidence/README.md](evidence/README.md)
+- **100 trace xem không cần đăng nhập:** [Danh sách trace công khai](evidence/public_traces.md)
+
 > **📌 Hình thức: BÀI CÁ NHÂN** — mỗi học viên tự làm và tự nộp 1 repo theo quy ước đặt tên.
 > **⏰ Thời lượng:** ~3–4 giờ · **Deadline:** 23:59 ngày học lab (GMT+7)
 >
@@ -171,3 +180,40 @@ Tệp `.env` chứa API key nhạy cảm. Đảm bảo `.gitignore` đã có dò
 | Guardrails AI               | https://www.guardrailsai.com/docs                                  |
 | FAISS (Facebook AI)         | https://faiss.ai                                                   |
 | LangChain FAISS Integration | https://python.langchain.com/docs/integrations/vectorstores/faiss  |
+
+## Chạy bản đã hoàn thiện (PowerShell)
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python -m pip install -r requirements.txt
+if (!(Test-Path .env)) { Copy-Item .env.example .env }
+# Điền API key, provider và PROMPT_V1_NAME/PROMPT_V2_NAME riêng trong .env.
+$env:PYTHONUTF8 = "1"
+$env:PYTHONIOENCODING = "utf-8"
+.\.venv\Scripts\python src/config.py
+.\.venv\Scripts\python src/run_all.py
+```
+
+Kiểm tra offline, không gọi LLM API:
+
+```powershell
+.\.venv\Scripts\python -m unittest discover -s tests -v
+.\.venv\Scripts\python src/run_all.py --step 4
+```
+
+Hai prompt dùng chung tại `src/prompts.py`. Bước 2 tự lưu routing log vào
+`evidence/02_ab_routing_log.txt`; bước 3 lưu báo cáo vào cả `data/` và
+`evidence/`; bước 4 lưu hai log demo. Ảnh LangSmith, Prompt Hub và bảng điểm
+RAGAS phải chụp từ lần chạy thật. Kiểm tra faithfulness và phân tích V1/V2
+sau khi có điểm thực tế; việc hoàn thiện mã chưa chứng minh đạt ngưỡng.
+
+### Tiếp tục đánh giá sau gián đoạn
+
+```powershell
+.\.venv\Scripts\python src/03_ragas_evaluation.py --resume
+```
+
+Lệnh này dùng lại câu trả lời đã lưu khi prompt và bộ QA khớp, tiếp tục từ
+checkpoint điểm RAGAS phù hợp với dữ liệu và cấu hình evaluator. Chỉ những
+cặp sample/metric bị thiếu điểm mới được chấm lại, tối đa hai lần; điểm thấp
+hợp lệ được giữ nguyên. Checkpoint lưu trong `data/` và được Git bỏ qua.
